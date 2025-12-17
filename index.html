@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>晚安提醒</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			overflow: hidden;
+		}
+		
+		h1 {
+			font-size: 4rem;
+			text-align: center;
+			animation: colorChange 5s infinite, float 6s ease-in-out infinite;
+			text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+			letter-spacing: 2px;
+			font-weight: 300;
+			position: relative;
+			z-index: 1;
+		}
+		
+		@keyframes colorChange {
+			0% { color: #a18cd1; }
+			25% { color: #fbc2eb; }
+			50% { color: #8fd3f4; }
+			75% { color: #84fab0; }
+			100% { color: #a18cd1; }
+		}
+		
+		@keyframes float {
+			0% { transform: translateY(0px); }
+			50% { transform: translateY(-20px); }
+			100% { transform: translateY(0px); }
+		}
+		
+		/* Decorative elements */
+		.star {
+			position: absolute;
+			background: white;
+			clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+			animation: twinkle 4s infinite;
+		}
+		
+		.star:nth-child(1) {
+			width: 30px;
+			height: 30px;
+			top: 10%;
+			left: 20%;
+			animation-delay: 0s;
+		}
+		
+		.star:nth-child(2) {
+			width: 20px;
+			height: 20px;
+			top: 30%;
+			right: 15%;
+			animation-delay: 1s;
+		}
+		
+		.star:nth-child(3) {
+			width: 25px;
+			height: 25px;
+			bottom: 20%;
+			left: 10%;
+			animation-delay: 2s;
+		}
+		
+		.star:nth-child(4) {
+			width: 35px;
+			height: 35px;
+			bottom: 30%;
+			right: 20%;
+			animation-delay: 3s;
+		}
+		
+		@keyframes twinkle {
+			0%, 100% { opacity: 0.3; transform: scale(0.8); }
+			50% { opacity: 1; transform: scale(1.1); }
+		}
+		
+		/* Moon */
+		.moon {
+			position: absolute;
+			top: 5%;
+			right: 10%;
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			background: radial-gradient(circle at 30% 30%, #ffffff, #e6e6e6);
+			box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+			opacity: 0.8;
+		}
+	</style>
+</head>
+<body>
+	<div class="moon"></div>
+	<div class="star"></div>
+	<div class="star"></div>
+	<div class="star"></div>
+	<div class="star"></div>
+	<h1>该睡觉了</h1>
+</body>
+</html>
